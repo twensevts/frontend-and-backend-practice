@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #e5f3f7;
+    color: #444444;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+#header {
+    background: rgba(223, 238, 247, 0.95);
+    padding: 10px;
+    text-align: center;
+}
+
+#header h1 {
+    color: rgba(54, 100, 118, 0.9);
+    font-size: 2.5em;
+}
+
+#menu {
+    background: rgba(54, 100, 118, 0.9);
+    padding: 15px;
+}
+
+#menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+#menu a {
+    color: #f3f4f6;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 1px solid #f3f4f6;
+    border-radius: 3px;
+}
+
+#menu a:hover {
+    background: rgba(79, 131, 152, 0.9);
+}
+
+#content {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 5px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.content-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.content-header img {
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.skill-item,
+.experience-item,
+.news-item,
+.practice-item {
+    background: rgba(255, 255, 255, 0.95);
+    margin: 15px 0;
+    padding: 15px;
+    border-radius: 5px;
+    border: 2px dashed #d5f3f0;
+}
+
+.product-card {
+    display: inline-block;
+    width: 280px;
+    margin: 15px;
+    padding: 20px;
+    background: #f9fafa;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+#footer {
+    background: rgba(54, 100, 118, 0.9);
+    color: #f3f4f6;
+    text-align: center;
+    padding: 20px;
+}
+
+h2 {
+    color: rgba(81, 118, 133, 0.9);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h3 {
+    color: #34495e;
+    margin-bottom: 10px;
+}
+.contact-button {
+    background: rgba(54, 100, 118, 0.9);
+    color: #f3f4f6;
+    padding: 12px 25px;
+    border: 1px solid rgba(54, 100, 118, 0.9);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 220px;
+}
+
+.contact-button:hover {
+    background: rgba(79, 131, 152, 0.9);
+}
