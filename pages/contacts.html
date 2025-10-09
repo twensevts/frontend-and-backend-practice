@@ -10,6 +10,7 @@
     <div id="header">
         <h1>Контакты</h1>
     </div>
+    
     <div id="menu">
         <ul>
             <li><a href="../index.html">Главная</a></li>
@@ -19,12 +20,130 @@
             <li><a href="contacts.html">Контакты</a></li>
         </ul>
     </div>
-    <div id="content">
-        <p><strong>Электронная почта:</strong> twensevts@mail.ru</p>
-        <p><strong>Адрес:</strong> г. Москва, Кремль</p>
-        <button class="contact-button" onclick="alert('Номер телефона +7(123) 456-78-90')">Позвоните мне</button>    </div>
-    <div id="footer">
+    
+    <main class="content">
+        <section class="contacts-container">
+            <h2 class="section-title">Наши контакты</h2>
+            
+            <article class="contact-info">
+                <h3>Электронная почта</h3>
+                <p>Адрес электронной почты: ivanovivan@mail.ru</p>
+            </article>
+            
+            <article class="contact-info">
+                <h3>Физический адрес</h3>
+                <p>Адрес: г. Москва, Кремль</p>
+            </article>
+
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <h3>Телефон</h3>
+                    <p>+7 (495) 123-45-67</p>
+                </div>
+                <div class="contact-item">
+                    <h3>Время работы</h3>
+                    <p>Пн-Пт: 9:00-18:00</p>
+                </div>
+                <div class="contact-item">
+                    <h3>Социальные сети</h3>
+                    <p>Telegram, WhatsApp</p>
+                </div>
+            </div>
+            
+            <button class="contact-button" onclick="contactModal.showModal()">Связаться с нами</button>
+        </section>
+    </main>
+
+    <footer class="footer">
         <p>Все права защищены.</p>
-    </div>
+    </footer>
+
+    <dialog id="contactModal">
+        <div class="modal-header">
+            <h2>Форма обратной связи</h2>
+        </div>
+        
+        <div class="modal-content">
+            <form id="feedbackForm" method="dialog">
+                <div class="form-group">
+                    <label for="name">Имя <span class="required">*</span></label>
+                    <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Телефон <span class="required">*</span></label>
+                    <input type="tel" id="phone" name="phone" required placeholder="+7 (XXX) XXX-XX-XX">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Электронная почта <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required placeholder="example@mail.ru">
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Категория обращения <span class="required">*</span></label>
+                    <select id="category" name="category" required>
+                        <option value="">Выберите категорию</option>
+                        <option value="technical">Техническая поддержка</option>
+                        <option value="commercial">Коммерческое предложение</option>
+                        <option value="cooperation">Сотрудничество</option>
+                        <option value="complaint">Жалоба</option>
+                        <option value="suggestion">Предложение</option>
+                        <option value="other">Другое</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Текст обращения <span class="required">*</span></label>
+                    <textarea id="message" name="message" required placeholder="Опишите вашу проблему или вопрос..."></textarea>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" onclick="contactModal.close()">Отмена</button>
+                    <button type="button" class="btn btn-primary" onclick="submitForm()">Отправить</button>
+                </div>      
+            </form>
+        </div>
+    </dialog>
+
+    <script>
+        function submitForm() {
+            const form = document.getElementById('feedbackForm');
+            const formData = new FormData(form);
+
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            const data = {
+                name: formData.get('name'),
+                phone: formData.get('phone'),
+                email: formData.get('email'),
+                category: formData.get('category'),
+                message: formData.get('message')
+            };
+
+            console.log('Данные формы:', data);
+            
+            alert('Спасибо! Ваше обращение отправлено. Мы свяжемся с вами в ближайшее время.');
+            
+            contactModal.close();
+            
+            form.reset();
+        }
+
+        document.getElementById('contactModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                this.close();
+            }
+        });
+
+        document.getElementById('feedbackForm').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter' && event.target.type !== 'textarea') {
+                event.preventDefault();
+            }
+        });
+    </script>
 </body>
 </html>
