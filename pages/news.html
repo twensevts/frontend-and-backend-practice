@@ -1,44 +1,86 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Семестровая работа</title>
+    <title>Новости - Семестровая работа</title>
+    <link rel="stylesheet" href="../styles/variables.css">
     <link rel="stylesheet" href="../styles/style.css">
 </head>
-<body>
-    <div id="header">
-        <h1>Новости</h1>
-    </div>
-    <div id="menu">
-        <ul>
-            <li><a href="../index.html">Главная</a></li>
-            <li><a href="news.html">Новости</a></li>
-            <li><a href="practices.html">Практики</a></li> 
-            <li><a href="goods.html">Товары</a></li>
-            <li><a href="contacts.html">Контакты</a></li>
+<body class="page">
+    <header class="header">
+        <h1 class="header__title">Новости</h1>
+    </header>
+    
+    <nav class="nav" aria-label="Основная навигация">
+        <ul class="nav__list">
+            <li class="nav__item">
+                <a href="../index.html" class="nav__link">Главная</a>
+            </li>
+            <li class="nav__item">
+                <a href="news.html" class="nav__link nav__link--active">Новости</a>
+            </li>
+            <li class="nav__item">
+                <a href="practices.html" class="nav__link">Практики</a>
+            </li>
+            <li class="nav__item">
+                <a href="goods.html" class="nav__link">Товары</a>
+            </li>
+            <li class="nav__item">
+                <a href="contacts.html" class="nav__link">Контакты</a>
+            </li>
         </ul>
-    </div>
-    <div id="content">
-        <div class="news-item">
-            <h2>Огурцы атакуют котят!</h2>
-            <p><em>Дата публикации: 08.09.2025 | Автор: Иванов И.И.</em></p>
-            <p>Коты боятся огруцов из-за их схожести со змеями. Эта битва будет легендарной!</p>
-        </div>
-        <div class="news-item">
-            <h2>В москве отменили зеленый цвет на светофорах!</h2>
-            <p><em>Дата публикации: 05.01.2025 | Автор: Петров П.П.</em></p>
-            <p>С 5 января 2025 года в Москве больше не будет зеленого цвета у светофоров, только красный! 
-                Также отключили и жёлтый. Слава пробкам.</p>
-        </div>
-        <div class="news-item">
-            <h2>На Байкале обнаружена Атлантида!</h2>
-            <p><em>Дата публикации: 01.09.2024 | Автор: Нефейков С.С.</em></p>
-            <p>Учёные из Британии обнаружили Атлантиду на глубине в 2 км на о.Байкал!</p>
-        </div>
-    </div>
-    <div id="footer">
-        <p>Все права защищены.</p>
-    </div>
+    </nav>
+    
+    <main class="main" id="main-content">
+        <section class="content" aria-labelledby="news-title">
+            <h2 id="news-title" class="content__title">Последние новости</h2>
+            
+            <article class="card" aria-labelledby="news-1">
+                <header class="card__header">
+                    <h3 id="news-1" class="card__title">Огурцы атакуют котят!</h3>
+                    <p class="card__meta">
+                        <time datetime="2025-09-08">08.09.2025</time> | 
+                        <span class="card__author">Автор: Иванов И.И.</span>
+                    </p>
+                </header>
+                <div class="card__content">
+                    <p class="card__description">Коты боятся огурцов из-за их схожести со змеями. Эта битва будет легендарной!</p>
+                </div>
+            </article>
+            
+            <article class="card" aria-labelledby="news-2">
+                <header class="card__header">
+                    <h3 id="news-2" class="card__title">В Москве отменили зеленый цвет на светофорах!</h3>
+                    <p class="card__meta">
+                        <time datetime="2025-01-05">05.01.2025</time> | 
+                        <span class="card__author">Автор: Петров П.П.</span>
+                    </p>
+                </header>
+                <div class="card__content">
+                    <p class="card__description">С 5 января 2025 года в Москве больше не будет зеленого цвета у светофоров, только красный! Также отключили и жёлтый. Слава пробкам.</p>
+                </div>
+            </article>
+            
+            <article class="card" aria-labelledby="news-3">
+                <header class="card__header">
+                    <h3 id="news-3" class="card__title">На Байкале обнаружена Атлантида!</h3>
+                    <p class="card__meta">
+                        <time datetime="2024-09-01">01.09.2024</time> | 
+                        <span class="card__author">Автор: Нефейков С.С.</span>
+                    </p>
+                </header>
+                <div class="card__content">
+                    <p class="card__description">Учёные из Британии обнаружили Атлантиду на глубине в 2 км на о.Байкал!</p>
+                </div>
+            </article>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <p class="footer__text">Все права защищены.</p>
+    </footer>
+
+    <script src="../scripts/theme-switcher.js"></script>
 </body>
 </html>

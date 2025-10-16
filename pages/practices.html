@@ -1,49 +1,67 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Семестровая работа</title>
+    <title>Достижения - Семестровая работа</title>
+    <link rel="stylesheet" href="../styles/variables.css">
     <link rel="stylesheet" href="../styles/style.css">
 </head>
-<body>
-    <div id="header">
-        <h1>Достижения</h1>
-    </div>
-    <div id="menu">
-        <ul>
-            <li><a href="../index.html">Главная</a></li>
-            <li><a href="news.html">Новости</a></li>
-            <li><a href="practices.html">Практики</a></li> 
-            <li><a href="goods.html">Товары</a></li>
-            <li><a href="contacts.html">Контакты</a></li>
+<body class="page">
+    <header class="header">
+        <h1 class="header__title">Достижения</h1>
+    </header>
+    
+    <nav class="nav" aria-label="Основная навигация">
+        <ul class="nav__list">
+            <li class="nav__item">
+                <a href="../index.html" class="nav__link">Главная</a>
+            </li>
+            <li class="nav__item">
+                <a href="news.html" class="nav__link">Новости</a>
+            </li>
+            <li class="nav__item">
+                <a href="practices.html" class="nav__link nav__link--active">Практики</a>
+            </li>
+            <li class="nav__item">
+                <a href="goods.html" class="nav__link">Товары</a>
+            </li>
+            <li class="nav__item">
+                <a href="contacts.html" class="nav__link">Контакты</a>
+            </li>
         </ul>
-    </div>
-    <div id="content">
-        <h2>Очень важные достижения</h2>
-        
-        <div class="practice-item">
-            <h3>Достижение 1: 5 пантеон в Hollow Knight!</h3>
-            <p>Пройденный сложный режим в жучином королевстве</p>
-        </div>
-        
-        <div class="practice-item">
-            <h3>Достижение 2: 3 года в Genshin Impact</h3>
-            <p>Я сожалею об этом</p>
-        </div>
-        
-        <div class="practice-item">
-            <h3>Достижение 3: CSS стилизация</h3>
-            <p>Работа со стилями</p>
-        </div>
-        
-        <div class="practice-item">
-            <h3>Достижение 4: JavaScript основы</h3>
-            <p>Изучение базового синтаксиса JavaScript на ТИП</p>
-        </div>
-    </div>
-    <div id="footer">
-        <p>Все права защищены.</p>
-    </div>
+    </nav>
+    
+    <main class="main" id="main-content">
+        <section class="content" aria-labelledby="achievements-title">
+            <h2 id="achievements-title" class="content__title">Очень важные достижения</h2>
+            
+            <article class="card" aria-labelledby="achievement-1">
+                <h3 id="achievement-1" class="card__title">Достижение 1: 5 пантеон в Hollow Knight!</h3>
+                <p class="card__description">Пройденный сложный режим в жучином королевстве</p>
+            </article>
+            
+            <article class="card" aria-labelledby="achievement-2">
+                <h3 id="achievement-2" class="card__title">Достижение 2: 3 года в Genshin Impact</h3>
+                <p class="card__description">Я сожалею об этом</p>
+            </article>
+            
+            <article class="card" aria-labelledby="achievement-3">
+                <h3 id="achievement-3" class="card__title">Достижение 3: CSS стилизация</h3>
+                <p class="card__description">Работа со стилями</p>
+            </article>
+            
+            <article class="card" aria-labelledby="achievement-4">
+                <h3 id="achievement-4" class="card__title">Достижение 4: JavaScript основы</h3>
+                <p class="card__description">Изучение базового синтаксиса JavaScript на ТИП</p>
+            </article>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <p class="footer__text">Все права защищены.</p>
+    </footer>
+
+    <script src="../scripts/theme-switcher.js"></script>
 </body>
 </html>

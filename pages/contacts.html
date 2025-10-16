@@ -1,88 +1,124 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Семестровая работа</title>
+    <title>Контакты - Семестровая работа</title>
+    <link rel="stylesheet" href="../styles/variables.css">
     <link rel="stylesheet" href="../styles/style.css">
 </head>
-<body>
-    <div id="header">
-        <h1>Контакты</h1>
-    </div>
+<body class="page">
+    <header class="header">
+        <h1 class="header__title">Контакты</h1>
+    </header>
     
-    <div id="menu">
-        <ul>
-            <li><a href="../index.html">Главная</a></li>
-            <li><a href="news.html">Новости</a></li>
-            <li><a href="practices.html">Практики</a></li> 
-            <li><a href="goods.html">Товары</a></li>
-            <li><a href="contacts.html">Контакты</a></li>
+    <nav class="nav" aria-label="Основная навигация">
+        <ul class="nav__list">
+            <li class="nav__item">
+                <a href="../index.html" class="nav__link">Главная</a>
+            </li>
+            <li class="nav__item">
+                <a href="news.html" class="nav__link">Новости</a>
+            </li>
+            <li class="nav__item">
+                <a href="practices.html" class="nav__link">Практики</a>
+            </li>
+            <li class="nav__item">
+                <a href="goods.html" class="nav__link">Товары</a>
+            </li>
+            <li class="nav__item">
+                <a href="contacts.html" class="nav__link nav__link--active">Контакты</a>
+            </li>
         </ul>
-    </div>
+    </nav>
     
-    <main class="content">
-        <section class="contacts-container">
-            <h2 class="section-title">Наши контакты</h2>
+    <main class="main" id="main-content">
+        <section class="content" aria-labelledby="contacts-title">
+            <h2 id="contacts-title" class="content__title">Наши контакты</h2>
             
-            <article class="contact-info">
-                <h3>Электронная почта</h3>
-                <p>Адрес электронной почты: ivanovivan@mail.ru</p>
+            <article class="card" aria-labelledby="email-contact">
+                <h3 id="email-contact" class="card__title">Электронная почта</h3>
+                <address class="card__description">
+                    Адрес электронной почты: 
+                    ivanovivan@mail.ru</p>
+                </address>
             </article>
             
-            <article class="contact-info">
-                <h3>Физический адрес</h3>
-                <p>Адрес: г. Москва, Кремль</p>
+            <article class="card" aria-labelledby="address-contact">
+                <h3 id="address-contact" class="card__title">Физический адрес</h3>
+                <address class="card__description">
+                    Адрес: г. Москва, Кремль
+                </address>
             </article>
 
-            <div class="contact-grid">
-                <div class="contact-item">
-                    <h3>Телефон</h3>
-                    <p>+7 (495) 123-45-67</p>
-                </div>
-                <div class="contact-item">
-                    <h3>Время работы</h3>
-                    <p>Пн-Пт: 9:00-18:00</p>
-                </div>
-                <div class="contact-item">
-                    <h3>Социальные сети</h3>
-                    <p>Telegram, WhatsApp</p>
-                </div>
+            <div class="grid grid--contacts">
+                <article class="card" aria-labelledby="phone-contact">
+                    <h3 id="phone-contact" class="card__title">Телефон</h3>
+                    <p class="card__description">+7 (495) 123-45-67</p>
+                    </p>
+                </article>
+                
+                <article class="card" aria-labelledby="hours-contact">
+                    <h3 id="hours-contact" class="card__title">Время работы</h3>
+                    <p class="card__description">Пн-Пт: 9:00-18:00</p>
+                </article>
+                
+                <article class="card" aria-labelledby="social-contact">
+                    <h3 id="social-contact" class="card__title">Социальные сети</h3>
+                    <p class="card__description">Telegram, WhatsApp</p>
+                </article>
             </div>
             
-            <button class="contact-button" onclick="contactModal.showModal()">Связаться с нами</button>
+            <button class="button contact-button" onclick="contactModal.showModal()" aria-haspopup="dialog">
+                Связаться с нами
+            </button>
         </section>
     </main>
 
     <footer class="footer">
-        <p>Все права защищены.</p>
+        <p class="footer__text">Все права защищены.</p>
     </footer>
 
-    <dialog id="contactModal">
-        <div class="modal-header">
-            <h2>Форма обратной связи</h2>
+    <dialog id="contactModal" class="modal" aria-labelledby="modal-title">
+        <div class="modal__header">
+            <h2 id="modal-title" class="modal__title">Форма обратной связи</h2>
         </div>
         
-        <div class="modal-content">
-            <form id="feedbackForm" method="dialog">
-                <div class="form-group">
-                    <label for="name">Имя <span class="required">*</span></label>
-                    <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
+        <div class="modal__content">
+            <form id="feedbackForm" method="dialog" class="form" aria-labelledby="modal-title">
+                <div class="form__group">
+                    <label for="name" class="form__label">
+                        Имя <span class="form__required" aria-hidden="true">*</span>
+                        <span class="visually-hidden">обязательное поле</span>
+                    </label>
+                    <input type="text" id="name" name="name" class="form__input" required 
+                           placeholder="Введите ваше имя" aria-required="true">
                 </div>
 
-                <div class="form-group">
-                    <label for="phone">Телефон <span class="required">*</span></label>
-                    <input type="tel" id="phone" name="phone" required placeholder="+7 (XXX) XXX-XX-XX">
+                <div class="form__group">
+                    <label for="phone" class="form__label">
+                        Телефон <span class="form__required" aria-hidden="true">*</span>
+                        <span class="visually-hidden">обязательное поле</span>
+                    </label>
+                    <input type="tel" id="phone" name="phone" class="form__input" required 
+                           placeholder="+7 (XXX) XXX-XX-XX" aria-required="true">
                 </div>
 
-                <div class="form-group">
-                    <label for="email">Электронная почта <span class="required">*</span></label>
-                    <input type="email" id="email" name="email" required placeholder="example@mail.ru">
+                <div class="form__group">
+                    <label for="email" class="form__label">
+                        Электронная почта <span class="form__required" aria-hidden="true">*</span>
+                        <span class="visually-hidden">обязательное поле</span>
+                    </label>
+                    <input type="email" id="email" name="email" class="form__input" required 
+                           placeholder="example@mail.ru" aria-required="true">
                 </div>
 
-                <div class="form-group">
-                    <label for="category">Категория обращения <span class="required">*</span></label>
-                    <select id="category" name="category" required>
+                <div class="form__group">
+                    <label for="category" class="form__label">
+                        Категория обращения <span class="form__required" aria-hidden="true">*</span>
+                        <span class="visually-hidden">обязательное поле</span>
+                    </label>
+                    <select id="category" name="category" class="form__select" required aria-required="true">
                         <option value="">Выберите категорию</option>
                         <option value="technical">Техническая поддержка</option>
                         <option value="commercial">Коммерческое предложение</option>
@@ -93,19 +129,28 @@
                     </select>
                 </div>
 
-                <div class="form-group">
-                    <label for="message">Текст обращения <span class="required">*</span></label>
-                    <textarea id="message" name="message" required placeholder="Опишите вашу проблему или вопрос..."></textarea>
+                <div class="form__group">
+                    <label for="message" class="form__label">
+                        Текст обращения <span class="form__required" aria-hidden="true">*</span>
+                        <span class="visually-hidden">обязательное поле</span>
+                    </label>
+                    <textarea id="message" name="message" class="form__textarea" required 
+                              placeholder="Опишите вашу проблему или вопрос..." aria-required="true"></textarea>
                 </div>
 
                 <div class="modal-actions">
-                    <button type="button" class="btn btn-secondary" onclick="contactModal.close()">Отмена</button>
-                    <button type="button" class="btn btn-primary" onclick="submitForm()">Отправить</button>
+                    <button type="button" class="button button--secondary" onclick="contactModal.close()">
+                        Отмена
+                    </button>
+                    <button type="button" class="button" onclick="submitForm()">
+                        Отправить
+                    </button>
                 </div>      
             </form>
         </div>
     </dialog>
 
+    <script src="../scripts/theme-switcher.js"></script>
     <script>
         function submitForm() {
             const form = document.getElementById('feedbackForm');
@@ -126,11 +171,21 @@
 
             console.log('Данные формы:', data);
             
-            alert('Спасибо! Ваше обращение отправлено. Мы свяжемся с вами в ближайшее время.');
+            const successMessage = document.createElement('div');
+            successMessage.className = 'alert alert-success';
+            successMessage.setAttribute('role', 'alert');
+            successMessage.innerHTML = `
+                <strong>Спасибо!</strong> Ваше обращение отправлено. Мы свяжемся с вами в ближайшее время.
+            `;
             
-            contactModal.close();
+            const modalContent = document.querySelector('.modal__content');
+            modalContent.insertBefore(successMessage, modalContent.firstChild);
             
-            form.reset();
+            setTimeout(() => {
+                contactModal.close();
+                form.reset();
+                successMessage.remove();
+            }, 3000);
         }
 
         document.getElementById('contactModal').addEventListener('click', function(event) {
@@ -143,6 +198,11 @@
             if (event.key === 'Enter' && event.target.type !== 'textarea') {
                 event.preventDefault();
             }
+        });
+
+        const modal = document.getElementById('contactModal');
+        modal.addEventListener('close', () => {
+            document.querySelector('.contact-button').focus();
         });
     </script>
 </body>

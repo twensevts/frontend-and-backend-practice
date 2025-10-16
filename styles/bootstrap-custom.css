@@ -1,0 +1,198 @@
+@import url('variables.css');
+
+:root {
+  --bs-primary: var(--color-primary);
+  --bs-secondary: var(--text-subheading);
+  --bs-success: #198754;
+  --bs-info: #0dcaf0;
+  --bs-warning: #ffc107;
+  --bs-danger: #e74c3c;
+  --bs-light: var(--bg-body);
+  --bs-dark: var(--text-secondary);
+  --bs-body-bg: var(--bg-body);
+}
+
+body {
+  background: var(--bg-body) !important;
+  color: var(--text-primary) !important;
+}
+
+.bg-header-custom {
+  background: var(--bg-header) !important;
+}
+
+.bg-nav-custom {
+  background: var(--color-primary) !important;
+}
+
+.bg-content-custom {
+  background: var(--bg-content) !important;
+}
+
+.bg-footer-custom {
+  background: var(--bg-footer) !important;
+}
+
+.text-heading-custom {
+  color: var(--text-heading) !important;
+}
+
+.text-subheading-custom {
+  color: var(--text-subheading) !important;
+}
+
+.text-secondary-custom {
+  color: var(--text-secondary) !important;
+}
+
+.bg-light {
+  background: var(--bg-body) !important;
+}
+
+.card-custom {
+  background: var(--bg-content) !important;
+  border: 2px dashed var(--border-color) !important;
+  border-radius: var(--border-radius) !important;
+  transition: all var(--transition-normal) !important;
+  color: var(--text-primary) !important;
+}
+
+.card-custom:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover) !important;
+  border-color: var(--color-primary) !important;
+}
+
+.product-card-bootstrap {
+  background: var(--bg-content) !important;
+  border-radius: var(--border-radius) !important;
+  box-shadow: var(--shadow) !important;
+  transition: all var(--transition-normal) !important;
+  border: 2px dashed transparent !important;
+  color: var(--text-primary) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-card-bootstrap::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--color-primary);
+  transform: scaleX(0);
+  transition: transform var(--transition-normal);
+}
+
+.product-card-bootstrap:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover) !important;
+  border-color: var(--border-color) !important;
+}
+
+.product-card-bootstrap:hover::before {
+  transform: scaleX(1);
+}
+
+.product-card-bootstrap.selected {
+  border: 3px solid var(--color-primary) !important;
+  box-shadow: 0 0 25px rgba(54, 100, 118, 0.4) !important;
+  background: linear-gradient(135deg, var(--bg-content) 0%, rgba(223, 238, 247, 0.3) 100%) !important;
+}
+
+.product-card-bootstrap.selected::after {
+  content: '✓ ВЫБРАНО';
+  position: absolute;
+  top: 10px;
+  left: -5px;
+  background: var(--color-primary);
+  color: var(--text-light);
+  padding: 5px 15px;
+  font-size: var(--font-size-xs);
+  font-weight: bold;
+  border-radius: 0 3px 3px 0;
+  z-index: 2;
+}
+
+.discount-badge-bootstrap {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-size: var(--font-size-xs);
+  font-weight: bold;
+  z-index: 3;
+}
+
+.btn-custom-primary {
+  background: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  color: var(--text-light) !important;
+  transition: all var(--transition-normal) !important;
+}
+
+.btn-custom-primary:hover {
+  background: var(--color-primary-hover) !important;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow) !important;
+}
+
+.nav-link-custom {
+  color: var(--text-light) !important;
+  border: 1px solid var(--text-light) !important;
+  border-radius: var(--border-radius) !important;
+  transition: all var(--transition-normal) !important;
+}
+
+.nav-link-custom:hover,
+.nav-link-custom.active {
+  background: var(--color-primary-hover) !important;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow) !important;
+}
+
+.theme-switcher-bootstrap {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.theme-switcher-btn {
+  background: var(--color-primary) !important;
+  color: var(--text-light) !important;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow);
+}
+
+.theme-switcher-btn:hover {
+  background: var(--color-primary-hover) !important;
+  transform: rotate(30deg) scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .theme-switcher-bootstrap {
+    top: 10px;
+    right: 10px;
+  }
+  
+  .theme-switcher-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
+
+[data-theme="dark"] .text-white {
+  color: var(--text-light) !important;
+}

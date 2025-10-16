@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Товары - Семестровая работа</title>
+    <link rel="stylesheet" href="../styles/variables.css">
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body class="page">
+    <header class="header">
+        <h1 class="header__title">Каталог товаров</h1>
+    </header>
+    
+    <nav class="nav" aria-label="Основная навигация">
+        <ul class="nav__list">
+            <li class="nav__item">
+                <a href="../index.html" class="nav__link">Главная</a>
+            </li>
+            <li class="nav__item">
+                <a href="news.html" class="nav__link">Новости</a>
+            </li>
+            <li class="nav__item">
+                <a href="practices.html" class="nav__link">Практики</a>
+            </li>
+            <li class="nav__item">
+                <a href="goods.html" class="nav__link nav__link--active">Товары</a>
+            </li>
+            <li class="nav__item">
+                <a href="contacts.html" class="nav__link">Контакты</a>
+            </li>
+        </ul>
+    </nav>
+    
+    <main class="main" id="main-content">
+        <section class="content" aria-labelledby="products-title">
+            <h2 id="products-title" class="content__title">Наши товары</h2>
+            
+            <div class="grid grid--products">
+                <article class="product-card" data-product-id="1" aria-labelledby="product-1">
+                    <img src="../images/goods1.jpg" alt="Зубочистка - гигиеническое средство для ухода за полостью рта" class="product-card__image" width="150">
+                    <h3 id="product-1" class="product-card__title">Зубочистка</h3>
+                    <p class="product-card__price">1 руб.</p>
+                    <button class="button product-card__button" aria-label="Добавить Зубочистку в корзину">В корзину</button>
+                </article>
+                
+                <article class="product-card" data-product-id="2" aria-labelledby="product-2">
+                    <img src="../images/goods2.jpg" alt="Gapple Pro Max - флагманский смартфон нового поколения" class="product-card__image" width="150">
+                    <div class="product-card__discount-badge" aria-label="Товар со скидкой">СКИДКА</div>
+                    <h3 id="product-2" class="product-card__title">Gapple Pro Max</h3>
+                    <p class="product-card__price product-card__price--discount">
+                        <span class="product-card__price--old">200,000 руб.</span>
+                        150,000.01 руб.
+                    </p>
+                    <button class="button product-card__button" aria-label="Добавить Gapple Pro Max в корзину">В корзину</button>
+                </article>
+                
+                <article class="product-card" data-product-id="3" aria-labelledby="product-3">
+                    <img src="../images/goods3.jpg" alt="Xaiomi Ultra Pro Car - электрический автомобиль будущего" class="product-card__image" width="150">
+                    <h3 id="product-3" class="product-card__title">Xaiomi Ultra Pro Car</h3>
+                    <p class="product-card__price">200 руб.</p>
+                    <button class="button product-card__button" aria-label="Добавить Xaiomi Ultra Pro Car в корзину">В корзину</button>
+                </article>
+                
+                <article class="product-card" data-product-id="4" aria-labelledby="product-4">
+                    <img src="../images/goods4.jpg" alt="Самолёт личный - частный самолет для бизнес-путешествий" class="product-card__image" width="150">
+                    <div class="product-card__discount-badge" aria-label="Товар со скидкой">СКИДКА</div>
+                    <h3 id="product-4" class="product-card__title">Самолёт личный</h3>
+                    <p class="product-card__price product-card__price--discount">
+                        <span class="product-card__price--old">600 млн руб.</span>
+                        500 млн руб.
+                    </p>
+                    <button class="button product-card__button" aria-label="Добавить Самолёт личный в корзину">В корзину</button>
+                </article>
+                
+                <article class="product-card" data-product-id="5" aria-labelledby="product-5">
+                    <img src="../images/goods5.jpg" alt="Чехол для Xaiomi Car - защитный чехол премиум-класса" class="product-card__image" width="150">
+                    <h3 id="product-5" class="product-card__title">Чехол для Xaiomi Car</h3>
+                    <p class="product-card__price">790,000 руб.</p>
+                    <button class="button product-card__button" aria-label="Добавить Чехол для Xaiomi Car в корзину">В корзину</button>
+                </article>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <p class="footer__text">Все права защищены.</p>
+    </footer>
+
+    <script src="../scripts/theme-switcher.js"></script>
+    <script src="../scripts/product-cards.js"></script>
+</body>
+</html>
